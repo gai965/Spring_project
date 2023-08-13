@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.demo.multi.MultiService;
-
 @Controller
 public class MultiController {
 
@@ -23,6 +21,6 @@ public class MultiController {
 		
 		model.addAttribute("result", result);
 
-		return "multi.html";
+		return "multi";
 	}
 }
