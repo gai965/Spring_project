@@ -9,21 +9,19 @@ public class FizzBuzzService {
 
 	public ArrayList<String> createList() {
 		ArrayList<String> lists = new ArrayList<String>();
-		String string = "";
 
-		for (int number = 1; number <= 100; number++) {
-			string = String.valueOf(number) + "：";
+		for (int number = 0; number <= 100; number++) {
 
 			if (number % 3 == 0 && number % 5 == 0) {
-				string += "FizzBuzz";
+				lists.add("FizzBuzz");
 			} else if (number % 3 == 0) {
-				string += "Fizz";
+				lists.add("Fizz");
 			} else if (number % 5 == 0) {
-				string += "Buzz";
+				lists.add("Buzz");
+			} else {
+				lists.add(String.valueOf(number));
 			}
-			lists.add(string);
 		}
-
 		return lists;
 	}
 
