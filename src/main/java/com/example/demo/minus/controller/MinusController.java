@@ -16,16 +16,16 @@ public class MinusController {
 		this.minusService = minusService;
 	}
 
-	@GetMapping("display")
+	@GetMapping("minusInput")
 	public String doGet() {
 		return "minus";
 	}
 
-	@GetMapping("minus")
-	public String doGet(@RequestParam("subtrahend") String subtrahend, @RequestParam("minuend") String minuend,
+	@GetMapping("minusResult")
+	public String doGet(@RequestParam("minuend") String minuend, @RequestParam("subtrahend") String subtrahend,
 			Model model) {
 
-		int result = minusService.minus(Integer.parseInt(subtrahend), Integer.parseInt(minuend));
+		int result = minusService.minus(Integer.parseInt(minuend), Integer.parseInt(subtrahend));
 		model.addAttribute("result", result);
 
 		return "minus";
