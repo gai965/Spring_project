@@ -16,12 +16,12 @@ public class CalculatorController {
 		this.calculatorService = calculatorService;
 	}
 
-	@GetMapping("input")
+	@GetMapping("calculatorInput")
 	public String doGet() {
 		return "calculator";
 	}
 
-	@GetMapping("calculator")
+	@GetMapping("calculatorResult")
 	public String doGet(@RequestParam("leftOperant") String leftOperant,
 			@RequestParam("rightOperant") String rightOperant,
 			@RequestParam("operator") String operator, Model model) {
