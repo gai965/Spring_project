@@ -22,11 +22,11 @@ public class CalculatorController {
 	}
 
 	@GetMapping("calculatorResult")
-	public String doGet(@RequestParam("leftOperant") String leftOperant,
-			@RequestParam("rightOperant") String rightOperant,
+	public String doGet(@RequestParam("leftOperant") int leftOperant,
+			@RequestParam("rightOperant") int rightOperant,
 			@RequestParam("operator") String operator, Model model) {
 
-		int result = calculatorService.calculate(Integer.parseInt(leftOperant), Integer.parseInt(rightOperant),
+		int result = calculatorService.calculate(leftOperant, rightOperant,
 				operator);
 		model.addAttribute("result", result);
 

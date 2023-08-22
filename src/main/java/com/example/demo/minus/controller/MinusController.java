@@ -22,10 +22,10 @@ public class MinusController {
 	}
 
 	@GetMapping("minusResult")
-	public String doGet(@RequestParam("minuend") String minuend, @RequestParam("subtrahend") String subtrahend,
+	public String doGet(@RequestParam("minuend") int minuend, @RequestParam("subtrahend") int subtrahend,
 			Model model) {
 
-		int result = minusService.minus(Integer.parseInt(minuend), Integer.parseInt(subtrahend));
+		int result = minusService.minus(minuend, subtrahend);
 		model.addAttribute("result", result);
 
 		return "minus";
