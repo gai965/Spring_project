@@ -26,8 +26,8 @@ public class AnimalsApiController {
 	}
 
 	@GetMapping("animalResults")
-	public String animalResults(@RequestParam("animalnumber") String animalnumber, Model model) throws IOException {
-		List<Animals> animalsList = animalsApiService.getAnimals(animalnumber);
+	public String animalResults(@RequestParam("animalNumber") String animalNumber, Model model) throws IOException {
+		List<Animals> animalsList = animalsApiService.getAnimals(animalNumber);
 
 		model.addAttribute("animalsList", animalsList);
 

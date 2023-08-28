@@ -17,8 +17,8 @@ public class AnimalsApiService {
 		this.animalsApiRepository = animalsApiRepository;
 	}
 
-	public List<Animals> getAnimals(String animalnumber) throws IOException {
-		Animals[] animalsList = animalsApiRepository.getAnimals(animalnumber);
+	public List<Animals> getAnimals(String animalNumber) throws IOException {
+		Animals[] animalsList = animalsApiRepository.getAnimals(animalNumber);
 
 		return Arrays.asList(animalsList);
 	}
