@@ -21,13 +21,17 @@ public class AnimalsApiController {
 	}
 
 	@GetMapping("animalSearch")
-	public String animalSearch() {
+	public String animalSearch(Model model) throws IOException {
+		List<Animals> animalsList = animalsApiService.getAnimalsList();
+		
+		model.addAttribute("animalsList", animalsList);
+
 		return "animalsearch";
 	}
 
 	@GetMapping("animalResults")
 	public String animalResults(@RequestParam("animalNumber") String animalNumber, Model model) throws IOException {
-		List<Animals> animalsList = animalsApiService.getAnimals(animalNumber);
+		List<Animals> animalsList = animalsApiService.getAnimalsDetail(animalNumber);
 
 		model.addAttribute("animalsList", animalsList);
 
